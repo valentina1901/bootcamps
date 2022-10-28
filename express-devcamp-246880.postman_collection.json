@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "641115fa-f12f-4dec-bde0-550c87a35a5b",
+		"_postman_id": "3d278212-3be5-4d45-bffc-bb88c653e9d2",
 		"name": "express-devcamp-246880",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -12,7 +12,10 @@
 					"name": "traer todos los bootcamps",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": ""
+						}
 					},
 					"response": []
 				},
@@ -20,7 +23,10 @@
 					"name": "traer bootcamp por id",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": ""
+						}
 					},
 					"response": []
 				},
@@ -77,6 +83,50 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "traer los usuarios",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "actualizar user",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/users/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "traerusersid",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
 				}
 			]
 		},
@@ -84,7 +134,10 @@
 			"name": "prueba básica",
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": ""
+				}
 			},
 			"response": []
 		}
