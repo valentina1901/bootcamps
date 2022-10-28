@@ -1,16 +1,17 @@
 
 //verificar la conexion
 const sequelize = require('./seq')
-const UserModel = require('../models/user')
+
 const colors = require('colors')
 
+//se quita
+// const UserModel = require('../models/user')
+// //dependencia a dataType
+// const {DataTypes}=require('sequelize')
 
-//dependencia a dataType
-const {DataTypes}=require('sequelize')
-
+//se quita
 //crear el modelo
-const User= UserModel(sequelize, DataTypes)
-
+// const User= UserModel(sequelize, DataTypes)
 
 //crear una funcion asincrona para una funcion 
 const connectDB = async()=>{

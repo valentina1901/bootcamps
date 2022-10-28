@@ -1,6 +1,8 @@
+
 const express=require('express')
 const dontenv=require('dotenv')
 const colors=require('colors')
+const listEndpoints=require('express-list-endpoints')
 
 
 //dependencia a connexion bd
@@ -12,7 +14,6 @@ const userRoutes=require('./routes/userRoutes')
 const { connect } = require('./routes/BootcamRoutes')
 
 
-
 //ESTABLECER ARCHIVO DE CONFIGURACIÓN con variables de entorno del proyecto
 dontenv.config({
     path: './config_env/config.env'
@@ -20,12 +21,15 @@ dontenv.config({
 
 //1. Crear el objeto app
 const app=express()
+app.use(express.json())
 
 //ejecutar la conexion
 connectDB()
 
 app.use('/api/v1/bootcamps', bootcampRoutes)
 app.use('/api/v1/users', userRoutes)
+
+console.log(listEndpoints(app))
 
 //crear rutas(endoint, uri) para los bootcamps
 //3. Ejecutar servidor de dearrollo de express
