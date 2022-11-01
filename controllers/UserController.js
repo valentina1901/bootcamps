@@ -65,10 +65,23 @@ exports.actualizaruser=async(req, res)=>{
 
 
 //DELETE: borrar un bootcamp
-exports.borraruser=(req, res)=>{
+exports.borraruser=async(req, res)=>{
+
+//buscarusuario por id
+const u= await User.findByPk(req.params.id)
+
+// borrar usuario po id 
+await User.destroy({
+    where: {
+      id:req.params.id
+    }
+  });
+
+  //response
     res.status(200).json(
         {
-            "message": `aquí se va a borrar del users ${req.params.id}`
+            "succes":true,
+            "data":u
         }
     )
 }
