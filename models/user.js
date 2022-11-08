@@ -14,13 +14,53 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   User.init({
-    name: DataTypes.STRING,
-    email: DataTypes.STRING,
-    assword: DataTypes.STRING
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: true,
+      validate: {
+        isAlpha: {
+          args: true,
+          msg: 'Name sólo debe tener eltras'
+        },
+        notEmpty: {
+          args: true,
+          msg: 'Name no debe quedar vacío'
+        },
+        notNull: {
+          args: true,
+          msg: 'Ponga el campo name'
+        }
+      },
+    },
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notEmpty: {
+          args: true,
+          msg: 'Name no debe quedar vacío'
+        },
+        notNull: true,
+        isEmail: {
+          args: true,
+          msg: 'email debe ser válido'
+        }
+      }
+    },
+    password: {
+      type: DataTypes.STRING,
+      validate: {
+        len: {
+          args: [5,10],
+          msg: "password entre 5 y 10 caracteres"
+        }
+      }
+    }
   }, {
     sequelize,
     modelName: 'User',
-    timestamps:false
+    timestamps: false
   });
   return User;
 };
