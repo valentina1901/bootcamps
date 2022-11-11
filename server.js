@@ -11,6 +11,8 @@ const connectDB= require('./config/db')
 //dependencias a las rutas
 const bootcampRoutes=require('./routes/BootcamRoutes')
 const userRoutes=require('./routes/userRoutes')
+const reviewsRoutes=require('./routes/reviewsRoutes')
+const coursesRoutes=require('./routes/coursesRoutes')
 const { connect } = require('./routes/BootcamRoutes')
 
 
@@ -28,6 +30,8 @@ connectDB()
 
 app.use('/api/v1/bootcamps', bootcampRoutes)
 app.use('/api/v1/users', userRoutes)
+app.use('/api/v1/cursos', coursesRoutes)
+app.use('/api/v1/reviews', reviewsRoutes)
 
 console.log(listEndpoints(app))
 
